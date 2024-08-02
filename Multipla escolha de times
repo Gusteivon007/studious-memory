@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha seu Time de Futebol</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .team-photo {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Escolha seu Time de Futebol</h1>
+    <select id="team-select" onchange="showTeamPhoto()">
+        <option value="">Selecione um time</option>
+        <option value="flamengo">Flamengo</option>
+        <option value="corinthians">Corinthians</option>
+        <option value="santos">Santos</option>
+        <option value="palmeiras">Palmeiras</option>
+        <!-- Adicione mais times conforme necessário -->
+    </select>
+    <div class="team-photo">
+        <img id="team-photo" src="" alt="Foto do Time" style="display:none; width: 300px;">
+    </div>
+
+    <script>
+        function showTeamPhoto() {
+            var team = document.getElementById("team-select").value;
+            var photo = document.getElementById("team-photo");
+            
+            if (team === "flamengo") {
+                photo.src = "https://escudo flamengo.jpeg";
+                photo.style.display = "block";
+            } else if (team === "corinthians") {
+                photo.src = "https://escudo corinthians.jpeg";
+                photo.style.display = "block";
+            } else if (team === "santos") {
+                photo.src = "https://escudo santos.jpeg";
+                photo.style.display = "block";
+            } else if (team === "palmeiras") {
+                photo.src = "https://escudo palmeiras.jpeg";
+                photo.style.display = "block";
+            } else {
+                photo.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
